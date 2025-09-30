@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Before / After — Juxtapose</title>
+  <!-- If unpkg is blocked on your network, download juxtapose.min.js and juxtapose.css locally and update links -->
+  <link rel="stylesheet" href="https://unpkg.com/juxtaposejs/build/css/juxtapose.css">
+  <style>
+    html,body{margin:0;background:#0f0f10;color:#fff;font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;}
+    .wrap{max-width:1200px;margin:0 auto;padding:2rem 1rem;}
+    .title{font-weight:600;font-size:1rem;opacity:.7;margin:0 0 .75rem}
+    .jx{width:min(1200px,100%);height:min(67.5vw,675px);background:#111;border-radius:16px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.25);}
+    .credit{font-size:.8rem;opacity:.6;margin-top:.75rem;text-align:center}
+    @media (prefers-color-scheme: light) {
+      html,body{background:#ffffff;color:#111}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <p class="title">aiopalopa — before / after</p>
+    <div id="comp" class="jx"></div>
+    <p class="credit">Сделано на Juxtapose • Ползунок перетаскивается мышью/тачем</p>
+  </div>
+
+  <script src="https://unpkg.com/juxtaposejs/build/js/juxtapose.min.js"></script>
+  <script>
+    // Initialize slider
+    new juxtapose.JXSlider('#comp', [
+      { src: './anim 3.gif', label: 'Вариант 1' },
+      { src: './anim 3_1.gif', label: 'Вариант 2' }
+    ], {
+      animate: true,
+      showLabels: true,
+      startingPosition: "50%",
+      makeResponsive: true,
+      mode: 'horizontal'
+    });
+  </script>
+  <noscript>Включите JavaScript для просмотра слайдера сравнения.</noscript>
+</body>
+</html>
